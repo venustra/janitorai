@@ -1,0 +1,346 @@
+<!-- Created by Nyxv on jai -->
+<!--                                                                                   
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                     ####                                         
+                                 ###*:=.:###*                                     
+                                *-:..+**:..:-++###                                
+                             ##-:-:+=::----:---:--##                              
+                            #-:::=%%*--=--==#%%%%:.=#                             
+                          #+..#@=::...:::.-::-:.-==+.###                          
+                        #*+=%+::..:::::::::::::::-:-#.+.+#                        
+                       #+*=#-::.-::..::.:..:::::::::-@-=--**#                     
+                     #+-+.%*-::::::::..::::..::::.:::-#-:..=-*#                   
+                   #+:*:-.*-:.::....::::::::..::::::::+*-=:.--=+#                 
+                   #=:.::@=::::..::::..::..::::..::::::=*-:*.::*#                 
+                 #=.-:#:#=--:::::..:..:::::..:.:::.:-::-%-..=.+=+#                
+                #*=:...#%=:::..:::..::....::::::.:::::::-+%.=#-.-*#               
+                #*#=#:%+-:.::::.::::..::::..::.:.:::::.:-=%:#=::::-#              
+               #*::=%-%=:.::..::::..:::..::::..::...::.::-%:#--:..:-#             
+               *=..:#-%=::.::::....:.::::::::..:::::-:::--%-%=:.:::=*#            
+              #=:.::-#=%-:::+%#-::::.:.:...::::::+%%@%:::++=%+-:::::=#            
+             *=:::.:=%+#-::*@.%%*:::::::::::.:::-@%%%@=:-#-%++-::.::-+#           
+             *-::.::#%%:#:.+@%%%*:::::=+:+*::::.:=%@@*-:-%+%*+:.:::.:-#           
+            #=::.::=+=*#=*::-*#-::::::::#=:::.:.-:::::-=%+%++*:::::::-=#          
+           ##-.::::-%-+%#=*::.::.:::::-*--+-:::::::---+#+**=:::::::::-=*          
+           *:.:..::=-==###=#=::.::.:::.::.::::-::::=##=#  *-::.::::.-:-*          
+          #-::.:::--:--*#  #+=#*++==.--:-:--=-+*#%+-**    *#::.:::::::-+#         
+          #*::-.::--:-:+#   **+=-....:**#**#==::-=+**     **::..:.::-:-=#         
+         #+::::::-==-:-+*   #-.....-+=-::+:::::::=+--     *+=:.::.:::::=#         
+         #+=-.::::--:-=+*   *:.-=+=:=*   #*=:.:...::#      #::.::..:-:-+#         
+          #:::.:-::::--+#      *:::*       +.=+=:.:=*      *+::::::-:--+          
+          #+=:::::::--=*#    #+::-*         +:::*           #+::-::-==*#          
+           #+=:::-:--=*#    #-:.+           #-.::*          #*--::-==*#           
+             ##----+##     #-:.*             #=.-.+           ###+*#%             
+               #####        #+*#              #::-#                               
+                                               ##                                 
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                   -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>char-container</title>
+    <!-- Importação das fontes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f0f0; 
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            overflow-x: hidden;
+            padding: 40px 0;
+        }
+
+        .char-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px; 
+        }
+
+        /* Main Column with smooth gradient */
+        .main-column {
+            width: 350px; 
+            height: 80vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            cursor: default;
+        }
+
+        /* Character Name text */
+        .char-name {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-top: 8px;
+            margin-left: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        /* Username styling */
+        .my-username {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-left: 6px;
+            margin-top: -2px;
+            letter-spacing: 0.5px;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        /* Bio Container */
+        .bio-base {
+            width: 100%;
+            background: transparent;
+            margin-top: 10px;
+            margin-left: 2px;
+            padding: 5px; 
+            z-index: 2;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .bio-base p {
+            font-family: "Merriweather", serif;
+            font-size: 12px; 
+            color: rgba(255, 255, 255, 0.6); 
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+            text-align: justify;
+        }
+
+        /* Image container with FIXED SIZE */
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 250px; 
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 2;
+            background: #000; 
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .char-image {
+            width: 100%;
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+            filter: grayscale(0.8) contrast(1.2) brightness(0.6);
+            transition: filter 0.3s ease;
+        }
+
+        /* Internal Footer */
+        .footer-info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            z-index: 2;
+            padding: 0 5px;
+        }
+
+        .typewriter-text {
+            font-family: "Merriweather", serif;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0; 
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .main-column:hover .typewriter-text {
+            opacity: 1;
+            animation: typing 2s steps(40, end) forwards;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 140px } 
+        }
+
+        .mini-stats span {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Bottom Column with smooth gradient */
+        .bottom-column {
+            width: 350px;
+            min-height: 100px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            background: linear-gradient(180deg, #141414 0%, #0d0d0d 100%);
+            padding: 18px;
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 8px;
+            position: relative;
+            align-content: flex-start;
+        }
+
+        /* Tag block styling */
+        .tag-block {
+            font-family: "Merriweather", serif;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        /* --- MOBILE LAYOUT (Reduced by ~4px) --- */
+        @media (max-width: 480px) {
+            body {
+                overflow-y: auto; 
+                padding: 36px 0;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .main-column, .bottom-column {
+                width: 310px; 
+            }
+
+            .main-column {
+                height: auto; 
+                padding: 16px; 
+            }
+
+            .image-wrapper {
+                height: 200px; 
+            }
+
+            .bottom-column {
+                padding: 14px; 
+                gap: 4px; 
+            }
+
+            .char-name {
+                font-size: calc(1.2rem - 4px); 
+                margin-top: 4px; 
+            }
+
+            .my-username {
+                font-size: 5px; 
+            }
+
+            .bio-base {
+                margin-top: 6px; 
+                padding: 1px; 
+            }
+
+            .bio-base p {
+                font-size: 8px; 
+            }
+
+            .tag-block {
+                font-size: 6px; 
+                padding: 4px 8px; 
+            }
+
+            .mini-stats span {
+                font-size: 6px; 
+            }
+
+            .main-column:active .typewriter-text {
+                opacity: 1;
+                animation: typing 2s steps(40, end) forwards;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="char-container">
+        <div class="main-column">
+            <h1 class="char-name">char name</h1>
+            <span class="my-username">@Nyxv</span>
+            <div class="bio-base">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+            </div>
+            
+            <div class="image-wrapper">
+                <img src="https://i.pinimg.com/1200x/2f/b4/19/2fb419d68300df944443d6f82872d2dc.jpg" alt="Character" class="char-image">
+            </div>
+
+            <div class="footer-info">
+                <div class="typewriter-text">Donec pede justo</div>
+                <div class="mini-stats">
+                    <span>00.00k</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Vertical Column with Tags -->
+    <div class="bottom-column">
+        <div class="tag-block">tag 1</div>
+        <div class="tag-block">tag 2</div>
+        <div class="tag-block">tag 3</div>
+        <div class="tag-block">tag 4</div>
+        <div class="tag-block">tag 5</div>
+        <div class="tag-block">tag 6</div>
+        <div class="tag-block">tag 7</div>
+        <div class="tag-block">tag 8</div>
+        <div class="tag-block">tag 9</div>
+        <div class="tag-block">tag 10</div>
+        <div class="tag-block">tag 11</div>
+    </div>
+</body>
+</html>
