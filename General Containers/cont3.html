@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários 3D - Horizontal Esquerda</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            background: #03001e;
+            background: linear-gradient(45deg, #6407a1, #cc3ea6);
+        }
+
+        ul {
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 500px;
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            transition: 500ms;
+        }
+
+        ul:hover {
+            gap: 20px;
+        }
+
+        ul li {
+            position: relative;
+            list-style: none;
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .4);
+            transition: 500ms;
+            transition-delay: calc(var(--i) * 50ms);
+            cursor: pointer;
+            /* Inverte a ordem visual para a esquerda ficar no topo */
+            z-index: calc(5 - var(--i));
+        }
+
+        /* Ajuste das transformações para empilhar da esquerda para a direita */
+        ul li:nth-child(1) {
+            transform: translateZ(125px) translateX(68px);
+            filter: blur(1px);
+        }
+
+        ul li:nth-child(2) {
+            transform: translateZ(65px) translateX(30px);
+        }
+
+        ul li:nth-child(3) {
+            opacity: .8;
+            filter: blur(2px);
+        }
+
+        ul li:nth-child(4) {
+            transform: translateZ(-75px) translateX(-20px);
+            opacity: .6;
+            filter: blur(4px);
+        }
+
+        ul:hover li {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateZ(0) translateX(0);
+        }
+
+        ul li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li style="--i: 1;">
+            <img src="https://i.postimg.cc/ZRCLqjNq/user-img1.jpg" alt="Imagem do utilizador 1">
+        </li>
+        <li style="--i: 2;">
+            <img src="https://i.postimg.cc/C1XsnDCs/user-img2.jpg" alt="Imagem do utilizador 2">
+        </li>
+        <li style="--i: 3;">
+            <img src="https://i.postimg.cc/qqKXsRjV/user-img3.jpg" alt="Imagem do utilizador 3">
+        </li>
+        <li style="--i: 4;">
+            <img src="https://i.postimg.cc/QNKbG4s4/user-img4.jpg" alt="Imagem do utilizador 4">
+        </li>
+    </ul>
+
+</body>
+</html>
